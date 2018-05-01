@@ -2,4 +2,6 @@
 
 Create a collection of webpages that access a custom API created in Django REST Framework
 
+# License
 
+[MIT](./LICENSE)
