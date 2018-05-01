@@ -15,6 +15,9 @@ class Anime(models.Model):
     def __str__(self):
         return '{}'.format(self.title)
 
+    class Meta:
+        ordering = ['-id']
+
 class Breed(models.Model):
     name                    = models.CharField(max_length=255)
     description             = models.TextField()
@@ -26,6 +29,9 @@ class Breed(models.Model):
     def __str__(self):
         return '{}'.format(self.name)
 
+    class Meta:
+        ordering = ['-id']
+
 class Website(models.Model):
     name                    = models.CharField(max_length=255)
     link                    = models.URLField()
@@ -36,3 +42,6 @@ class Website(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name)
+
+    class Meta:
+        ordering = ['-id']
