@@ -23,8 +23,13 @@ from django.urls import path, include
 
 from rest_framework import routers
 
+router = routers.SimpleRouter()
+router.register(r'breeds', BreedModelViewSet)
+router.register(r'animes', AnimeModelViewSet)
+router.register(r'websites', WebsiteModelViewSet)
+
 urlpatterns = [
-    # path('', include(router.urls)),
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
 ]
 
