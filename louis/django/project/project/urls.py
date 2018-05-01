@@ -31,7 +31,7 @@ router.register(r'breeds', BreedModelViewSet)
 router.register(r'websites', WebsiteModelViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
 ]
 
