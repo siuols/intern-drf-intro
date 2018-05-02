@@ -23,10 +23,12 @@ from django.urls import path, include
 
 from rest_framework import routers
 
-from blogpage.views import AnimeModelViewSet, BreedModelViewSet, WebsiteModelViewSet
+from rest_framework.routers import DefaultRouter
+
+from blogpage.views import AnimeViewSet, BreedModelViewSet, WebsiteModelViewSet
 
 router = routers.DefaultRouter()
-router.register(r'animes', AnimeModelViewSet)
+router.register(r'animes', AnimeViewSet, base_name='anime')
 router.register(r'breeds', BreedModelViewSet)
 router.register(r'websites', WebsiteModelViewSet)
 
