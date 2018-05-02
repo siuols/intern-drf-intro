@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>Breed</title>
+  </head>
+  <body>
+    <div id="web-list">
+
+    </div>
+  </body>
+  <script src="jquery.js"></script>
+  <script type="text/javascript">
+    $.ajax({
+      type: "GET",
+      dataType: "JSON",
+      url: "http://127.0.0.1:8000/api/websites/",
+      success: function(data){
+        var list = $("#web-list");
+        for (var i=0;i<=data.length-1;i++) {
+          var weblist = data[i];
+          console.log(weblist);
+          list.append('<p>' +  weblist + '</p>');
+        }
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>Breed</title>
+  </head>
+  <body>
+    <div id="breed-list">
+
+    </div>
+  </body>
+  <script src="jquery.js"></script>
+  <script type="text/javascript">
+    $.ajax({
+      type: "GET",
+      dataType: "JSON",
+      url: "http://127.0.0.1:8000/api/breeds/",
+      success: function(data){
+        var list = $("#breed-list");
+        for (var i=0;i<=data.length-1;i++) {
+          var breedlist = data[i];
+          console.log(breedlist);
+          list.append('<p>' + breedlist.name + '</p><p>' + breedlist.description + '</p><p>' + breedlist.country + '</p><p>' + breedlist.is_official + '</p>');
+        }
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>Anime</title>
+  </head>
+  <body>
+    <div id="anime-list">
+
+    </div>
+  </body>
+  <script src="jquery.js"></script>
+  <script type="text/javascript">
+    $.ajax({
+      type: "GET",
+      dataType: "JSON",
+      url: "http://127.0.0.1:8000/api/animes/",
+      success: function(data){
+        var list = $("#anime-list");
+        // for (var i=0;i<=data.length-1;i++) {
+        //   var animelist = data[i];
+        //   console.log(animelist);
+        //   list.append('<p>' + animelist.title + '</p><img src="' + animelist.picture + '"><p>' + animelist.score + '</p><p>' + animelist.description + '</p><p>' + animelist.director + '</p><p>' + animelist.release_date + '</p>');
+        // }
+        $.each(data, function( index, value ) {
+          list.append('<p>' + value.title + '</p>');
+        });
+      }
+    });
+  </script>
+</html>
